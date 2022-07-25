@@ -20,13 +20,8 @@ import Counter from '../components/shared/Counter.vue';
 import FullPower from '../components/hero/FullPower.vue';
 import { useStore } from '../stores/main';
 import SseTest from '../components/sseTest.vue';
-import { onMounted } from 'vue';
 
 const store = useStore()
-
-onMounted(() => {
-  store.login("Jotaro")
-})
 
 </script>
 

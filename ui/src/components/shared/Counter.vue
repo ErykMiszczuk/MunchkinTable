@@ -1,9 +1,13 @@
 <template>
   <div class="counter">
     <div class="counter__title">{{ title }}</div>
-    <button class="counter__button--increment" @click="countIncrement">Higher</button>
+    <button class="counter__button--increment" @click="countIncrement">
+      Higher
+    </button>
     <div class="counter__value">{{ count }}</div>
-    <button class="counter__button--decrement" @click="countDecrement">Lower</button>
+    <button class="counter__button--decrement" @click="countDecrement">
+      Lower
+    </button>
   </div>
 </template>
 
