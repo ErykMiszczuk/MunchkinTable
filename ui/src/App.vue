@@ -1,10 +1,9 @@
-<script setup lang="ts">
-import Hero from './views/Hero.vue';
-</script>
-
 <template>
-  <Hero />
+  <router-view></router-view>
 </template>
+
+<script setup lang="ts">
+</script>
 
 <style>
 @import url("./main.scss");
