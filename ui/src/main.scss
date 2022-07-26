@@ -4,6 +4,22 @@
   --accent: hsl(214, 100%, 22%);
   --accept: hsl(97, 86%, 36%);
   --danger: hsl(14, 91%, 54%);
+  --radius: calc(1rem / 4);
+}
+
+%button {
+  padding: .5rem 1rem;
+  background-color: white;
+  border-style: solid;
+  border-color: var(--accent);
+  border-width: 2px;
+  border-radius: var(--radius);
+  font-size: 1.5rem;
+}
+
+%full-page {
+  width: 100vw;
+  height: 100vh;
 }
 
 #app {

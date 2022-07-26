@@ -26,7 +26,10 @@ const store = useStore()
 </script>
 
 <style lang="scss">
+@use "../main.scss";
+
 .hero {
+  @extend %full-page;
   @media screen and (min-width: 720px) {
     width: 720px;
   }

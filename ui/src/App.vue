@@ -5,8 +5,8 @@
 <script setup lang="ts">
 </script>
 
-<style>
-@import url("./main.scss");
+<style lang="scss">
+@use "./main.scss";
 
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;

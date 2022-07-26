@@ -1,10 +1,9 @@
 <template>
   <div>
-    <h3>SSE TEST</h3>
-    <span>{{ date }}</span>
+    <h3>Players List</h3>
     <ul>
       <li v-for="(player, key) in playersStats" :key="key">
-        {{ player }}
+        <Player :player-data="player[1]" />
       </li>
     </ul>
   </div>
@@ -15,8 +14,8 @@ import { onMounted, onUnmounted, ref } from 'vue';
 import type { Ref } from 'vue';
 import { functionalTry } from "../utils/functional-try";
 import { User } from '../types/User';
+import Player from './PlayerList/Player.vue';
 
-let date = ref(new Date());
 const playersStats: Ref<Map<string, User>> = ref(new Map());
 let sse: EventSource;
 

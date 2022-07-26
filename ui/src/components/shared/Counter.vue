@@ -42,15 +42,7 @@ function countDecrement() {
 </script>
 
 <style lang="scss">
-%button {
-  padding: .5rem 1rem;
-  background-color: white;
-  border-style: solid;
-  border-color: var(--accent);
-  border-width: 2px;
-  border-radius: calc(1rem / 4);
-  font-size: 1.5rem;
-}
+@use "../../main.scss";
 
 .counter {
   font-family: 'Boogaloo', cursive;
