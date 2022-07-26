@@ -4,11 +4,13 @@
     <FullPower :full-power="store.fullPower"/>
     <Counter 
       title="Level"
+      :starting-value="store.heroLevel"
       @increment="store.incrementHeroLevel()"
       @decrement="store.decrementHeroLevel()"
     />
     <Counter
       title="Items Power"
+      :starting-value="store.itemsPower"
       @increment="store.incrementItemsPower()"
       @decrement="store.decrementItemsPower()"
     />
@@ -19,7 +21,7 @@
 import Counter from '../components/shared/Counter.vue';
 import FullPower from '../components/hero/FullPower.vue';
 import { useStore } from '../stores/main';
-import SseTest from '../components/sseTest.vue';
+import SseTest from '../components/PlayersList.vue';
 
 const store = useStore()
 

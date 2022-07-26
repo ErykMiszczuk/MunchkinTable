@@ -1,8 +1,8 @@
 <template>
-  <div>
+  <div class="players-list">
     <h3>Players List</h3>
-    <ul>
-      <li v-for="(player, key) in playersStats" :key="key">
+    <ul class="list">
+      <li v-for="(player, key) in playersStats" :key="key" class="list__list-item">
         <Player :player-data="player[1]" />
       </li>
     </ul>
@@ -50,3 +50,11 @@ onUnmounted(() => {
 });
 
 </script>
+
+<style lang="scss">
+@use "../main.scss";
+
+.list {
+  list-style-type: none;
+}
+</style>
