@@ -1,4 +1,5 @@
 import { FastifyInstance, FastifyReply, FastifyRequest } from "fastify";
+import * as databaseController from '../controllers/database';
 import * as sse from "../controllers/sse";
 
 export default async function sseRoutes(fastify: FastifyInstance, options: Object) {
@@ -18,6 +19,9 @@ export default async function sseRoutes(fastify: FastifyInstance, options: Objec
     sse.createClient(clientId, reply);
 
     sse.writeToAll(`${clientId} is logged and there is ${sse.getClientsNumber()} other clients logged.`)
+
+    const users = await databaseController.getUsers();
+    sse.writeToAll(JSON.stringify(users));
 
     request.raw.on('close', () => {
       console.log(`${clientId} connection closed`);

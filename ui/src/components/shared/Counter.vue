@@ -2,11 +2,11 @@
   <div class="counter">
     <div class="counter__title">{{ title }}</div>
     <button class="counter__button--increment" @click="countIncrement">
-      Higher
+      <font-awesome-icon icon="fa-solid fa-plus" />
     </button>
     <div class="counter__value">{{ count }}</div>
     <button class="counter__button--decrement" @click="countDecrement">
-      Lower
+      <font-awesome-icon icon="fa-solid fa-minus" />
     </button>
   </div>
 </template>
@@ -69,6 +69,7 @@ function countDecrement() {
     &--increment {
       @extend %button;
       grid-area: 3 / 1 / 4 / 2;
+      font-size: 1.75rem;
       color: var(--accept);
       border-color: var(--accept);
 
@@ -89,6 +90,7 @@ function countDecrement() {
     
     &--decrement {
       @extend %button;
+      font-size: 1.75rem;
       grid-area: 3 / 2 / 4 / 3;
       color: var(--danger);
       border-color: var(--danger);

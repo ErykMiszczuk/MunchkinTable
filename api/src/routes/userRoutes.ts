@@ -6,7 +6,7 @@ import * as sse from "../controllers/sse";
 import { NewUser, User } from "../types/User";
 
 export default async function userRoutes(fastify: FastifyInstance, options: Object) {
-  fastify.get('/', async () => {
+  fastify.get('/api/v1', async () => {
     return { hello: 'world' };
   })
 

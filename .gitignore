@@ -26,6 +26,7 @@ dist-ssr
 # Server build code
 api/bin
 api/scribe
+api/public
 
 # UI ignore
 ui/.storybook

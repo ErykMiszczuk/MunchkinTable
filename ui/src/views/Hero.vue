@@ -3,13 +3,13 @@
     <SseTest />
     <FullPower :full-power="store.fullPower" />
     <Counter 
-      title="Hero Level"
+      title="Level"
       :starting-value="store.heroLevel"
       @increment="store.incrementHeroLevel()"
       @decrement="store.decrementHeroLevel()"
     />
     <Counter
-      title="Items Power"
+      title="Bonus"
       :starting-value="store.itemsPower"
       @increment="store.incrementItemsPower()"
       @decrement="store.decrementItemsPower()"

@@ -1,5 +1,7 @@
 import Fastify, { FastifyRequest } from 'fastify';
 import FastifyCors from '@fastify/cors';
+import FastifyStatic from "@fastify/static";
+import path from "path";
 import  * as databaseController from './controllers/database';
 import { FastifySSEPlugin } from "fastify-sse-v2";
 
@@ -30,9 +32,19 @@ fastify.register(FastifySSEPlugin);
 // Set logger
 databaseController.setLogger(fastify.log);
 
+// Serve static files
+fastify.register(FastifyStatic, {
+  root: path.join(__dirname, '../public'),
+  prefix: "/"
+})
+
 // Register routes
 fastify.register(userRoutes);
 fastify.register(sseRoutes);
+
+fastify.setNotFoundHandler(function (req, reply) {
+  reply.sendFile('index.html');
+})
 
 
 const start = async () => {
