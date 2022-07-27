@@ -1,6 +1,5 @@
 <template>
   <div class="players-list">
-    <h3>Players List</h3>
     <ul class="list">
       <li v-for="(player, key) in playersStats" :key="key" class="list__list-item">
         <Player :player-data="player[1]" />
@@ -55,6 +54,12 @@ onUnmounted(() => {
 @use "../main.scss";
 
 .list {
+  padding: 0;
+  margin: 0;
   list-style-type: none;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  border-bottom: 2px solid var(--accent);
 }
 </style>

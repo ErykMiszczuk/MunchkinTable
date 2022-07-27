@@ -3,10 +3,10 @@
     <div class="player__name">
       {{ props.playerData.username }}
     </div>
-    <div class="player__power">
-      {{ playerPower }}
-    </div>
     <div class="player__stats">
+      <div class="stats--full-power">
+        {{ playerPower }}
+      </div>
       <div class="stats--hero-level">
         {{ props.playerData.stats.heroLevel }}
       </div>
@@ -35,42 +35,40 @@ const playerPower = computed(() => {
 @use "../../main.scss";
 
 .player {
+  width: 6rem;
+  margin: 0 .5rem;
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  min-width: 180px;
-  font-size: 1.5rem;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1.75rem 1fr;
 
   &__name {
     padding: .5rem;
-    font-size: 1.5rem;
+    font-size: 1.25rem;
     grid-row: 1;
     grid-column: 1;
   }
 
-  &__power {
-    padding: .5rem;
-    font-size: 1.5rem;
-    flex: 1;
-    grid-row: 1;
-    grid-column: 2;
-  }
-
   &__stats {
-    grid-row: 1;
-    grid-column: 3;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
+    grid-row: 2;
+    grid-column: 1;
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
   }
 }
 
 .stats {
-  margin: 1rem;
+  &--full-power {
+    padding: .25rem;
+    &::before {
+      content: "⚜️ ";
+    }
+  }
 
   &--hero-level {
     padding: .25rem;
     &::before {
-      content: "💪";
+      content: "💪 ";
     }
   }
   
@@ -78,7 +76,7 @@ const playerPower = computed(() => {
   &--items-power {
     padding: .25rem;
     &::before {
-      content: "🏹";
+      content: "🏹 ";
     }
   }
 }

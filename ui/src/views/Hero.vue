@@ -1,9 +1,9 @@
 <template>
-  <SseTest />
   <div class="hero">
-    <FullPower :full-power="store.fullPower"/>
+    <SseTest />
+    <FullPower :full-power="store.fullPower" />
     <Counter 
-      title="Level"
+      title="Hero Level"
       :starting-value="store.heroLevel"
       @increment="store.incrementHeroLevel()"
       @decrement="store.decrementHeroLevel()"
