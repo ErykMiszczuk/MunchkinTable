@@ -25,8 +25,15 @@ dist-ssr
 
 # Server build code
 api/bin
+api/build
 api/scribe
 api/public
+
+# App included files
+# app/external
+
+# App build
+app/out
 
 # UI ignore
 ui/.storybook

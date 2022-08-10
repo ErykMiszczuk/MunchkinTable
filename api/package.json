@@ -1,9 +1,9 @@
 {
   "name": "@scribe/api",
-  "main": "bin/index.js",
+  "main": "build/index.js",
   "scripts": {
     "build": "tsc -p tsconfig.json",
-    "serve": "node ./bin/index.js"
+    "serve": "node ./build/index.js"
   },
   "dependencies": {
     "@fastify/cors": "^8.0.0",

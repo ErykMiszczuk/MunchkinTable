@@ -4,13 +4,12 @@ import FastifyStatic from "@fastify/static";
 import path from "path";
 import  * as databaseController from './controllers/database';
 import { FastifySSEPlugin } from "fastify-sse-v2";
-
-// Types
-import { User, NewUser } from './types/User';
+import os from "node:os";
 
 // Routes
 import userRoutes from './routes/userRoutes';
 import sseRoutes from './routes/sseRoutes';
+import { NetworkInterfaceInfo } from 'os';
 
 // Set logger
 const fastify = Fastify({
@@ -48,8 +47,16 @@ fastify.setNotFoundHandler(function (req, reply) {
 
 
 const start = async () => {
+  let networkInterfaces: Record<string, os.NetworkInterfaceInfo[]> = os.networkInterfaces() as Record<string, os.NetworkInterfaceInfo[]>;
+  let networkInterfacesArray: os.NetworkInterfaceInfo[] = Object.values(networkInterfaces).flat().filter((netInf: os.NetworkInterfaceInfo) => {
+    return !netInf.internal;
+  });
+
   try {
-    await fastify.listen({ port: 3000 });
+    if (networkInterfacesArray) {
+      fastify.log.info(networkInterfacesArray);
+    }
+    await fastify.listen({ host: networkInterfacesArray[0].address, port: 8081 });
   } catch (err) {
     fastify.log.error(err);
     process.exit(1);
