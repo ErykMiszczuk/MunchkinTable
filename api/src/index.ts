@@ -46,7 +46,7 @@ fastify.setNotFoundHandler(function (req, reply) {
 })
 
 
-const start = async () => {
+export const start = async () => {
   let networkInterfaces: Record<string, os.NetworkInterfaceInfo[]> = os.networkInterfaces() as Record<string, os.NetworkInterfaceInfo[]>;
   let networkInterfacesArray: os.NetworkInterfaceInfo[] = Object.values(networkInterfaces).flat().filter((netInf: os.NetworkInterfaceInfo) => {
     return !netInf.internal;
@@ -56,7 +56,7 @@ const start = async () => {
     if (networkInterfacesArray) {
       fastify.log.info(networkInterfacesArray);
     }
-    await fastify.listen({ host: networkInterfacesArray[0].address, port: 8081 });
+    await fastify.listen({ host: '0.0.0.0', port: 8081 });
   } catch (err) {
     fastify.log.error(err);
     process.exit(1);

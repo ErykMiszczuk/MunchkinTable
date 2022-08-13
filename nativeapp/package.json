@@ -1,0 +1,23 @@
+{
+    "name": "electron-with-express",
+    "description": "Demonstrates spawning Express from Electron and using it to serve content",
+    "version": "0.17.0",
+    "main": "main.js",
+    "authors": [
+        "Frank Hale <frankhale@gmail.com>"
+    ],
+    "license": "GPL-3.0",
+    "private": true,
+    "scripts": {
+        "start": ".\\node_modules\\node\\bin\\node.exe start-electron.js",
+        "build-release": "electron-packager . --overwrite --platform=win32 --arch=x64 --prune=true --out=release-builds --version-string.CompanyName=CE --version-string.FileDescription=CE --version-string.ProductName=\"MunchkinTable\""
+    },
+    "dependencies": {
+        "@electron/remote": "^2.0.8",
+        "electron": "^19.0.7",
+        "lodash": "^4.17.21",
+        "node": "^18.4.0",
+        "request": "^2.88.2",
+        "strip": "^3.0.0"
+    }
+}

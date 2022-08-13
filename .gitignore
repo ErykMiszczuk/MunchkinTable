@@ -7,6 +7,7 @@ yarn-error.log*
 pnpm-debug.log*
 lerna-debug.log*
 
+# Global
 node_modules
 dist
 dist-ssr
@@ -29,11 +30,9 @@ api/build
 api/scribe
 api/public
 
-# App included files
-# app/external
-
 # App build
-app/out
+nativeapp/release-builds
+nativeapp/express-app
 
 # UI ignore
-ui/.storybook
+webapp/.storybook
