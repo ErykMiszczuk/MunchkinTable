@@ -56,7 +56,7 @@ export const start = async () => {
     if (networkInterfacesArray) {
       fastify.log.info(networkInterfacesArray);
     }
-    await fastify.listen({ host: '0.0.0.0', port: 8081 });
+    await fastify.listen({ port: 4321, host: '0.0.0.0' });
   } catch (err) {
     fastify.log.error(err);
     process.exit(1);
