@@ -1,6 +1,6 @@
 <template>
   <div class="hero">
-    <SseTest />
+    <PlayersList />
     <FullPower :full-power="store.fullPower" />
     <Counter 
       title="Level"
@@ -21,7 +21,7 @@
 import Counter from '../components/shared/Counter.vue';
 import FullPower from '../components/hero/FullPower.vue';
 import { useStore } from '../stores/main';
-import SseTest from '../components/PlayersList.vue';
+import PlayersList from '../components/PlayersList/PlayersList.vue';
 
 const store = useStore()
 

@@ -1,5 +1,6 @@
 {
     "name": "@munchkin-table/nativeapp",
+    "productName": "MunchkinTableServer",
     "description": "Demonstrates spawning Express from Electron and using it to serve content",
     "version": "0.17.0",
     "main": "main.js",

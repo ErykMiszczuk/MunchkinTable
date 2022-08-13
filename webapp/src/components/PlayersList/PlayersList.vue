@@ -11,15 +11,15 @@
 <script setup lang="ts">
 import { onMounted, onUnmounted, ref } from 'vue';
 import type { Ref } from 'vue';
-import { functionalTry } from "../utils/functional-try";
-import { User } from '../types/User';
-import Player from './PlayerList/Player.vue';
+import { functionalTry } from "../../utils/functional-try";
+import { User } from '../../types/User';
+import Player from './Player.vue';
 
 const playersStats: Ref<Map<string, User>> = ref(new Map());
 let sse: EventSource;
 
 onMounted(() => {
-  sse = new EventSource('http://127.0.0.1:3000/sse')
+  sse = new EventSource('/sse')
 
   sse.onopen = () => {
     console.info("SSE Connected")
@@ -51,7 +51,7 @@ onUnmounted(() => {
 </script>
 
 <style lang="scss">
-@use "../main.scss";
+@use "../../main.scss";
 
 .list {
   padding: 0;

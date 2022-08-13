@@ -8,7 +8,7 @@ export async function createUser(username: string) {
   };
 
   try {
-    await fetch('http://127.0.0.1:3000/api/v1/user', options);
+    await fetch('/api/v1/user', options);
   } catch (err) {
     console.error(err)
   }
@@ -22,7 +22,7 @@ export async function updateUser(user: User) {
   };
   
   try {
-    await fetch('http://127.0.0.1:3000/api/v1/user', options)
+    await fetch('/api/v1/user', options)
   } catch (err) {
     console.log(err)
   }

@@ -4,7 +4,8 @@
   "description": "Scripts for maintaining project",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build-nativeapp": "node build-native-app.mjs"
   },
   "author": "Eryk Miszczuk",
   "license": "MIT",
