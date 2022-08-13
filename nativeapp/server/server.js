@@ -7,7 +7,7 @@ const _ = require("lodash");
 // Global Path
 const expressAppUrl = "http://127.0.0.1:3000";
 const nodePath = ".\\node_modules\\node\\bin\\node.exe";
-const expressPath = "./express-app/build/index";
+const serverAppPath = "./server-app/build/index";
 
 // Elements ID
 const serverLog = document.getElementById("serverLog");
@@ -18,7 +18,7 @@ const loading = document.getElementById("loading");
 // For electron-packager change cwd in spawn to app.getAppPath() and
 // uncomment the app require below
 let app = require('@electron/remote').app;
-let node = spawn(nodePath, [expressPath], {
+let node = spawn(nodePath, [serverAppPath], {
     cwd: app.getAppPath(),
 });
 
@@ -60,7 +60,7 @@ ipcRenderer.on("show-server-log", (event, data) => {
 
 (app = require('@electron/remote').app),
   (node = require("child_process").fork(
-    `${app.getAppPath()}/express-app/build/index`,
+    `${app.getAppPath()}/server-app/build/index`,
     [],
     {
       stdio: ["pipe", "pipe", "pipe", "ipc"],

@@ -1,9 +1,13 @@
 {
-  "name": "@scribe/api",
+  "name": "@munchkin-table/api",
   "main": "build/index.js",
   "scripts": {
     "build": "tsc -p tsconfig.json",
-    "serve": "node ./build/index.js"
+    "serve": "node ./build/index.js",
+    "delete-public-directory": "rm -rf public",
+    "create-public-directory": "mkdir public",
+    "copy-webapp": "cd ../webapp && npm run build && cp -t ../api/public -r dist/*",
+    "pull-webapp": "npm run delete-public-directory && npm run create-public-directory && npm run copy-webapp"
   },
   "dependencies": {
     "@fastify/cors": "^8.0.0",

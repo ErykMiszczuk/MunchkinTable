@@ -32,7 +32,7 @@ api/public
 
 # App build
 nativeapp/release-builds
-nativeapp/express-app
+nativeapp/server-app
 
 # UI ignore
 webapp/.storybook
