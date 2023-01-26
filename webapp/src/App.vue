@@ -17,5 +17,9 @@
   color: var(--accent);
   display: flex;
   justify-content: center;
+
+  > div {
+    @extend %full-page;
+  }
 }
 </style>

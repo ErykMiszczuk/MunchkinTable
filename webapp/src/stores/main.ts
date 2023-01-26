@@ -63,6 +63,5 @@ export const useStore = defineStore('main', {
       }
       userService.updateUser(patch);
     }
-  },
-  persist: true
+  }
 })
